@@ -1,0 +1,32 @@
+/* =========================================================
+   Typography
+   ========================================================= */
+
+.heading-display,
+.heading-section {
+  font-family:
+    "Noto Serif Devanagari",
+    "Noto Sans Devanagari",
+    Georgia,
+    serif;
+}
+
+.heading-display {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.heading-section {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+.text-devanagari {
+  font-family:
+    "Noto Sans Devanagari",
+    "Noto Sans",
+    Arial,
+    sans-serif;
+}
