@@ -18,25 +18,23 @@ import {
    मुख्य नेविगेशन
    ========================================================= */
 
+
 const navigationItems = [
   {
     label: "मुख्य पृष्ठ",
     path: "/",
     icon: House,
   },
-
   {
     label: "मंदिर परिचय",
     path: "/about",
     icon: Landmark,
   },
-
   {
     label: "पूजा एवं अनुष्ठान",
     path: "/rituals",
     icon: Flower2,
   },
-
   {
     label: "सेवाएँ एवं योजनाएँ",
     path: "#",
@@ -57,13 +55,8 @@ const navigationItems = [
         label: "माला एवं कवच सेवा",
         path: "/mala-kavach-seva",
       },
-      {
-        label: "सदस्यता",
-        path: "/membership",
-      },
     ],
   },
-
   {
     label: "पंजीकरण",
     path: "#",
@@ -90,17 +83,25 @@ const navigationItems = [
       },
       {
         label: "सदस्यता पंजीकरण",
-        path: "/membership/panjikaran",
+        path: "/membership",
+      },
+      {
+        label: "पर्यटन एवं मंदिर भ्रमण",
+        path: "/tourism",
+      },
+      {
+        label: "मंदिर भ्रमण टिकट बुकिंग",
+        path: "/tourism/ticket",
       },
     ],
   },
-
   {
     label: "गैलरी",
     path: "/gallery",
     icon: Images,
   },
 ];
+
 
 /* =========================================================
    Header

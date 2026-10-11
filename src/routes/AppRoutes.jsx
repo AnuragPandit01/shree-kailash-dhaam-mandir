@@ -1,3 +1,4 @@
+
 import { Navigate, Route, Routes } from "react-router-dom";
 
 import Home from "../pages/Home";
@@ -5,20 +6,22 @@ import Registration from "../pages/Registration";
 import About from "../pages/About";
 import Rituals from "../pages/Rituals";
 import Gallery from "../pages/Gallery";
+import MalaKavachSeva from "../pages/MalaKavachSeva";
+import LiveDarshan from "../pages/LiveDarshan";
+import Donation from "../pages/Donation";
+import Tourism from "../pages/Tourism";
+import TourTicket from "../pages/TourTicket";
+import Membership from "../pages/Membership";
 import Admin from "../pages/Admin";
 
 /* =========================================================
-   Temporary page
-   ---------------------------------------------------------
-   Used only until the actual page/component is created.
-   Replace these with real page components later.
+   अस्थायी पृष्ठ
    ========================================================= */
 
 function ComingSoonPage({ title, description }) {
   return (
     <section className="flex min-h-[65vh] items-center justify-center bg-[var(--color-cream)] px-5 py-20">
       <div className="max-w-2xl text-center">
-
         <div
           className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full border border-[var(--color-gold)]/40 bg-white text-[var(--color-maroon)] shadow-sm"
           aria-hidden="true"
@@ -45,14 +48,13 @@ function ComingSoonPage({ title, description }) {
 }
 
 /* =========================================================
-   404 Page
+   404 पृष्ठ
    ========================================================= */
 
 function NotFoundPage() {
   return (
     <section className="flex min-h-[65vh] items-center justify-center bg-[var(--color-cream)] px-5 py-20">
       <div className="max-w-xl text-center">
-
         <p className="text-sm font-semibold tracking-widest text-[var(--color-gold-dark)]">
           404
         </p>
@@ -71,7 +73,6 @@ function NotFoundPage() {
         >
           मुख्य पृष्ठ पर जाएँ
         </a>
-
       </div>
     </section>
   );
@@ -84,57 +85,25 @@ function NotFoundPage() {
 function AppRoutes() {
   return (
     <Routes>
+      {/* मुख्य पृष्ठ */}
+      <Route path="/" element={<Home />} />
 
-      {/* =====================================================
-          मुख्य पृष्ठ
-      ===================================================== */}
+      {/* मंदिर परिचय */}
+      <Route path="/about" element={<About />} />
 
-      <Route
-        path="/"
-        element={<Home />}
-      />
+      {/* पूजा एवं अनुष्ठान */}
+      <Route path="/rituals" element={<Rituals />} />
 
-      {/* =====================================================
-          मंदिर परिचय
-      ===================================================== */}
+      {/* धार्मिक कार्यक्रम पंजीकरण */}
+      <Route path="/registration" element={<Registration />} />
 
-      <Route
-        path="/about"
-        element={<About />}
-      />
-
-      {/* =====================================================
-          पूजा एवं अनुष्ठान
-      ===================================================== */}
-
-      <Route
-        path="/rituals"
-        element={<Rituals />}
-      />
-
-      {/* =====================================================
-          धार्मिक कार्यक्रम / सेवा पंजीकरण
-      ===================================================== */}
-
-      <Route
-        path="/registration"
-        element={<Registration />}
-      />
-
-      {/* =====================================================
-          गैलरी
-      ===================================================== */}
-
-      <Route
-        path="/gallery"
-        element={<Gallery />}
-      />
+      {/* गैलरी */}
+      <Route path="/gallery" element={<Gallery />} />
 
       {/* =====================================================
           सेवाएँ एवं योजनाएँ
-      ===================================================== */}
+         ===================================================== */}
 
-      {/* रोज़गार प्रशिक्षण */}
       <Route
         path="/rojgaar-prashikshan"
         element={
@@ -145,7 +114,6 @@ function AppRoutes() {
         }
       />
 
-      {/* खेल भारती स्कूल गेम परियोजना */}
       <Route
         path="/khel-bhaarti-school-game-pariyojna"
         element={
@@ -156,7 +124,6 @@ function AppRoutes() {
         }
       />
 
-      {/* प्रॉपर्टी डीलरशिप */}
       <Route
         path="/property-dealership"
         element={
@@ -167,39 +134,29 @@ function AppRoutes() {
         }
       />
 
-      {/* माला एवं कवच सेवा */}
       <Route
         path="/mala-kavach-seva"
-        element={
-          <ComingSoonPage
-            title="माला एवं कवच सेवा"
-            description="माला एवं कवच सेवा से संबंधित जानकारी और सेवा अनुरोध की सुविधा जल्द उपलब्ध होगी।"
-          />
-        }
-      />
-
-      {/* सदस्यता */}
-      <Route
-        path="/membership"
-        element={
-          <ComingSoonPage
-            title="सदस्यता"
-            description="मंदिर की सदस्यता, सदस्यता के लाभ और सदस्यता प्रक्रिया की जानकारी जल्द उपलब्ध होगी।"
-          />
-        }
+        element={<MalaKavachSeva />}
       />
 
       {/* =====================================================
-          अलग-अलग पंजीकरण
-      ===================================================== */}
+          पर्यटन एवं मंदिर भ्रमण
+         ===================================================== */}
 
-      {/* धार्मिक कार्यक्रम पंजीकरण */}
       <Route
-        path="/registration"
-        element={<Registration />}
+        path="/tourism"
+        element={<Tourism />}
       />
 
-      {/* रोज़गार प्रशिक्षण पंजीकरण */}
+      <Route
+        path="/tourism/ticket"
+        element={<TourTicket />}
+      />
+
+      {/* =====================================================
+          पंजीकरण
+         ===================================================== */}
+
       <Route
         path="/rojgaar-prashikshan/panjikaran"
         element={
@@ -210,7 +167,6 @@ function AppRoutes() {
         }
       />
 
-      {/* खेल भारती पंजीकरण */}
       <Route
         path="/khel-bhaarti-school-game-pariyojna/panjikaran"
         element={
@@ -221,7 +177,6 @@ function AppRoutes() {
         }
       />
 
-      {/* प्रॉपर्टी डीलरशिप पंजीकरण */}
       <Route
         path="/property-dealership/panjikaran"
         element={
@@ -232,7 +187,6 @@ function AppRoutes() {
         }
       />
 
-      {/* माला एवं कवच सेवा पंजीकरण */}
       <Route
         path="/mala-kavach-seva/panjikaran"
         element={
@@ -243,48 +197,34 @@ function AppRoutes() {
         }
       />
 
-      {/* सदस्यता पंजीकरण */}
+      {/* सदस्यता और सदस्यता पंजीकरण */}
+      <Route
+        path="/membership"
+        element={<Membership />}
+      />
+
       <Route
         path="/membership/panjikaran"
-        element={
-          <ComingSoonPage
-            title="सदस्यता पंजीकरण"
-            description="मंदिर की सदस्यता हेतु पंजीकरण फॉर्म जल्द उपलब्ध होगा।"
-          />
-        }
+        element={<Membership />}
       />
 
       {/* =====================================================
-          दान
-      ===================================================== */}
+          दान एवं लाइव दर्शन
+         ===================================================== */}
 
       <Route
         path="/donation"
-        element={
-          <ComingSoonPage
-            title="दान एवं सहयोग"
-            description="अन्नदान, द्रव्यदान, वस्त्रदान और शिक्षा दान से संबंधित सेवा एवं दान सुविधा जल्द उपलब्ध होगी।"
-          />
-        }
+        element={<Donation />}
       />
-
-      {/* =====================================================
-          लाइव दर्शन
-      ===================================================== */}
 
       <Route
         path="/live"
-        element={
-          <ComingSoonPage
-            title="लाइव दर्शन"
-            description="मंदिर के लाइव दर्शन के लिए यह पृष्ठ जल्द उपलब्ध होगा।"
-          />
-        }
+        element={<LiveDarshan />}
       />
 
       {/* =====================================================
-          Privacy Policy
-      ===================================================== */}
+          गोपनीयता नीति एवं नियम
+         ===================================================== */}
 
       <Route
         path="/privacy"
@@ -296,10 +236,6 @@ function AppRoutes() {
         }
       />
 
-      {/* =====================================================
-          Terms & Conditions
-      ===================================================== */}
-
       <Route
         path="/terms"
         element={
@@ -310,33 +246,23 @@ function AppRoutes() {
         }
       />
 
-      {/* =====================================================
-          व्यवस्थापक
-      ===================================================== */}
-
+      {/* व्यवस्थापक */}
       <Route
         path="/admin"
         element={<Admin />}
       />
 
-      {/* =====================================================
-          /index.html → /
-      ===================================================== */}
-
+      {/* /index.html से मुख्य पृष्ठ पर जाएँ */}
       <Route
         path="/index.html"
         element={<Navigate to="/" replace />}
       />
 
-      {/* =====================================================
-          Unknown URL
-      ===================================================== */}
-
+      {/* अज्ञात URL */}
       <Route
         path="*"
         element={<NotFoundPage />}
       />
-
     </Routes>
   );
 }
